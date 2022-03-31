@@ -1,0 +1,14 @@
+uuid: 16bc64f6-eecd-46ac-89f1-39c01f22b4f8
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.contact_for_member
+  module:
+    - user
+id: user_remove_role_action.contact_for_member
+label: 'Enlever le rôle Contact pour adhérent des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: contact_for_member

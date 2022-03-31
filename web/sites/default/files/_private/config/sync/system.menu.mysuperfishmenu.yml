@@ -1,0 +1,8 @@
+uuid: 581b2c06-0e72-483d-bbaf-89d5a6376e26
+langcode: fr
+status: true
+dependencies: {  }
+id: mysuperfishmenu
+label: mySuperfishMenu
+description: ''
+locked: false

@@ -1,0 +1,22 @@
+uuid: cfa93d20-540a-40c4-b9e2-df38d34eb579
+langcode: fr
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - corporate_lite
+_core:
+  default_config_hash: DoTezHYibJIW1id3PoKL8iscvzPXmtWWo7WSAM8uyrk
+id: corporate_lite_powered
+theme: corporate_lite
+region: footer_first
+weight: -7
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

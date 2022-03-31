@@ -1,0 +1,39 @@
+uuid: f9f206b6-76fa-4c41-b749-d408d4e1368d
+langcode: en
+status: true
+dependencies: {  }
+id: 1_users
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: cfe
+label: '1 Users'
+source:
+  plugin: csv
+  path: /Users/efalzon/Sites/CFE4/web/sites/default/files/_private/config/migration_Users.csv
+  delimiter: ;
+  enclosure: '"'
+  header_row_count: 1
+  ids:
+    - uid
+process:
+  uid: uid
+  name: name
+  mail: mail
+  status: status
+  langcode:
+    plugin: default_value
+    default_value: fr
+  preferred_langcode:
+    plugin: default_value
+    default_value: fr
+  roles:
+    plugin: explode
+    delimiter: ','
+    source: roles
+destination:
+  plugin: 'entity:user'
+migration_dependencies:
+  required: {  }
+  optional: {  }

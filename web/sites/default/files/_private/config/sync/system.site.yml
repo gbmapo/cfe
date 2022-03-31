@@ -1,0 +1,14 @@
+uuid: 71e8b76c-c5a0-4372-8f67-f1ea042be45d
+name: 'le Cercle Ferroviphile Européen'
+mail: contact@trainjouet.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+langcode: fr
+default_langcode: fr
+_core:
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE

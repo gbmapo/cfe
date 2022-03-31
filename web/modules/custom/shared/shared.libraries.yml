@@ -1,0 +1,11 @@
+shared:
+  version: 1.x
+  css:
+    component:
+      /libraries/DataTables/datatables.min.css: {}
+  js:
+      /libraries/DataTables/datatables.min.js: {}
+      /libraries/DataTables/moment.min.js: {}
+      /libraries/DataTables/datetime-moment.js: {}
+  dependencies:
+    - core/jquery

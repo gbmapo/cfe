@@ -1,0 +1,20 @@
+uuid: c2bb80a5-3b95-4077-a061-79ca13092555
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - corporate_lite
+_core:
+  default_config_hash: mHm3omOwQdkAOjVya_JnAOAAMtueGSFmpjd3-8wUEhA
+id: corporate_lite_page_title
+theme: corporate_lite
+region: content
+weight: -7
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  provider: core
+  label_display: '0'
+visibility: {  }

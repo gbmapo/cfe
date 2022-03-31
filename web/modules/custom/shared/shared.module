@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains shared.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function shared_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the shared module.
+    case 'help.page.shared':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Functions shared with others modules') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function shared_theme()
+{
+  return [
+    'shared' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+function shared_form_contact_message_feedback_form_alter(&$form, FormStateInterface $form_state)
+{
+  $form['actions']['preview']['#access'] = FALSE;
+}
+
+function shared_views_plugins_field_alter(array &$plugins)
+{
+  $plugins['custom']['class'] = 'Drupal\shared\Plugin\views\field\CustomToken';
+}

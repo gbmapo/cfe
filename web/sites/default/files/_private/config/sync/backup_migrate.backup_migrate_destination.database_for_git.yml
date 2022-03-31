@@ -1,0 +1,10 @@
+uuid: 0242bad6-5f87-46ee-b9ea-c06f666c0d7b
+langcode: fr
+status: true
+dependencies: {  }
+id: database_for_git
+label: 'Database for Git'
+type: Directory
+config:
+  name: 'Database for Git'
+  directory: 'private://backup_migrate/database'

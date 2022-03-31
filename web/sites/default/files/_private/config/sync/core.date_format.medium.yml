@@ -1,0 +1,10 @@
+uuid: ec90d901-86fc-4a28-8ed1-31a4768d1b71
+langcode: fr
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: nzL5d024NjXIX_8TlT6uFAu973lmfkmHklJC-2i9rAE
+id: medium
+label: 'Date moyenne par défaut'
+locked: false
+pattern: 'D d/m/Y - H:i'

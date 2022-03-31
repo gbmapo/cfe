@@ -1,0 +1,23 @@
+theme: corporate_lite
+defaults:
+  sender: swiftmailer
+  formatter: swiftmailer
+_core:
+  default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
+langcode: fr
+modules:
+  swiftmailer:
+    none:
+      formatter: swiftmailer
+      sender: swiftmailer
+  association:
+    membershipreminderemail:
+      formatter: swiftmailer
+      sender: swiftmailer
+    membershipfirstemail:
+      formatter: swiftmailer
+      sender: swiftmailer
+  user:
+    none:
+      formatter: swiftmailer
+      sender: swiftmailer

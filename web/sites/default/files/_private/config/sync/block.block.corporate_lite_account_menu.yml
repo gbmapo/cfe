@@ -1,0 +1,32 @@
+uuid: e71fe248-23c1-4bc4-ba41-0c217c353623
+langcode: fr
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - corporate_lite
+_core:
+  default_config_hash: A3bcyLasZcyva9oAcpiKesKXT5O0KStJkSrcU3YxFVw
+id: corporate_lite_account_menu
+theme: corporate_lite
+region: sidebar_first
+weight: -6
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 1
+  expand_all_items: false
+visibility:
+  request_path:
+    id: request_path
+    pages: '/association*'
+    negate: true
+    context_mapping: {  }
