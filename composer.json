@@ -29,7 +29,7 @@
         "drupal/migrate_tools": "^5.0",
         "drupal/superfish": "^1.4",
         "drupal/swiftmailer": "^2.0",
-        "drush/drush": "^10.4",
+        "drush/drush": "^10.6",
         "kint-php/kint": "^3.3"
     },
     "conflict": {
@@ -38,7 +38,12 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "drupal/core-composer-scaffold": true,
+            "drupal/core-project-message": true
+        }
     },
     "extra": {
         "drupal-scaffold": {
@@ -93,5 +98,8 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "require-dev": {
+        "drupal/upgrade_status": "^3.19"
     }
 }
