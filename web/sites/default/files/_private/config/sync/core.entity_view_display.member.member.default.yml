@@ -13,107 +13,107 @@ bundle: member
 mode: default
 content:
   addresssupplement:
-    label: above
     type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
     weight: 2
     region: content
+  city:
+    type: string
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  city:
-    label: above
-    type: string
     weight: 5
     region: content
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
   comment:
-    label: above
     type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
     weight: 14
     region: content
+  country:
+    type: list_default
+    label: above
     settings: {  }
     third_party_settings: {  }
-  country:
-    label: above
-    type: list_default
     weight: 7
     region: content
-    settings: {  }
-    third_party_settings: {  }
   designation:
-    label: above
     type: string
-    weight: 1
-    region: content
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  enddate:
-    label: above
-    weight: 12
+    weight: 1
     region: content
+  enddate:
+    type: datetime_custom
+    label: above
     settings:
       timezone_override: ''
       date_format: d/m/Y
     third_party_settings: {  }
-    type: datetime_custom
+    weight: 12
+    region: content
   isindirectory:
+    type: boolean
+    label: above
     settings:
       format: yes-no
       format_custom_false: ''
       format_custom_true: ''
+    third_party_settings: {  }
     weight: 9
     region: content
-    label: above
-    third_party_settings: {  }
-    type: boolean
   postalcode:
-    label: above
     type: string
-    weight: 4
-    region: content
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  region:
-    label: above
-    type: list_default
-    weight: 6
+    weight: 4
     region: content
+  region:
+    type: list_default
+    label: above
     settings: {  }
     third_party_settings: {  }
-  startdate:
-    label: above
-    weight: 11
+    weight: 6
     region: content
+  startdate:
+    type: datetime_custom
+    label: above
     settings:
       timezone_override: ''
       date_format: d/m/Y
     third_party_settings: {  }
-    type: datetime_custom
-  status:
-    label: above
-    weight: 10
+    weight: 11
     region: content
+  status:
+    type: list_default
+    label: above
     settings: {  }
     third_party_settings: {  }
-    type: list_default
-  street:
-    label: above
-    type: string
-    weight: 3
+    weight: 10
     region: content
+  street:
+    type: string
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-  telephone:
-    label: above
-    type: telephone_link
-    weight: 8
+    weight: 3
     region: content
+  telephone:
+    type: telephone_link
+    label: above
     settings:
       title: ''
     third_party_settings: {  }
+    weight: 8
+    region: content
 hidden: {  }
