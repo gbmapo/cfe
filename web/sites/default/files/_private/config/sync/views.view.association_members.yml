@@ -25,28 +25,937 @@ base_table: member
 base_field: id
 display:
   default:
-    display_plugin: default
     id: default
     display_title: Master
+    display_plugin: default
     position: 0
     display_options:
-      access:
-        type: role
-        options:
-          role:
-            secretary: secretary
-            administrator: administrator
-      cache:
+      title: Adhérents
+      fields:
+        id:
+          id: id
+          table: member
+          field: id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: id
+          plugin_id: field
+          label: 'Identifiant (ID)'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        designation:
+          id: designation
+          table: member
+          field: designation
+          entity_type: member
+          entity_field: designation
+          plugin_id: field
+        addresssupplement:
+          id: addresssupplement
+          table: member
+          field: addresssupplement
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: addresssupplement
+          plugin_id: field
+          label: 'Complément d''adresse'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        street:
+          id: street
+          table: member
+          field: street
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: street
+          plugin_id: field
+          label: Adresse
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{% if addresssupplement == \"\" %}\r\n{{ ' ' }}\r\n{% else %}\r\n{{ addresssupplement }}<BR>\r\n{% endif %}\r\n{{ street }} "
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        postalcode:
+          id: postalcode
+          table: member
+          field: postalcode
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: postalcode
+          plugin_id: field
+          label: 'Code Postal'
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        city:
+          id: city
+          table: member
+          field: city
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: city
+          plugin_id: field
+          label: Ville
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{{ postalcode }} {{ city }}'
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        country:
+          id: country
+          table: member
+          field: country
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: country
+          plugin_id: field
+          label: Pays
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        telephone:
+          id: telephone
+          table: member
+          field: telephone
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: telephone
+          plugin_id: field
+          label: Téléphone
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: telephone_link
+          settings:
+            title: ''
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        status:
+          id: status
+          table: member
+          field: status
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: status
+          plugin_id: field
+          label: Statut
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: list_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        startdate:
+          id: startdate
+          table: member
+          field: startdate
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: startdate
+          plugin_id: field
+          label: Début
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_custom
+          settings:
+            timezone_override: ''
+            date_format: m/Y
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        enddate:
+          id: enddate
+          table: member
+          field: enddate
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: enddate
+          plugin_id: field
+          label: Fin
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: datetime_custom
+          settings:
+            timezone_override: ''
+            date_format: m/Y
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        contact_id:
+          id: contact_id
+          table: member
+          field: contact_id
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: contact_id
+          plugin_id: field
+          label: Contact
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: Actions
+          exclude: false
+          alter:
+            alter_text: true
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        nothing_2:
+          id: nothing_2
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: Edit
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<img src="[site:url]sites/default/files/images/edit.svg" title="Modifier l''adhérent">'
+            make_link: true
+            path: '/association/member/{{ id }}/edit?destination=association/members'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        nothing_3:
+          id: nothing_3
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: Delete
+          exclude: false
+          alter:
+            alter_text: true
+            text: '<img src="[site:url]sites/default/files/images/trash-2.svg" title="Supprimer l''adhérent">'
+            make_link: true
+            path: '/association/member/{{ id }}/delete?destination=association/members'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+        nothing_1:
+          id: nothing_1
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: custom
+          label: Contact
+          exclude: false
+          alter:
+            alter_text: true
+            text: '{% if contact_id != "" %}<img src="[site:url]sites/default/files/images/user.svg" title="Voir, modifier, supprimer le contact">{% endif %}'
+            make_link: true
+            path: '/association/person/{{ contact_id }}'
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: _blank
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+      pager:
         type: none
-        options: {  }
-      query:
-        type: views_query
         options:
-          disable_sql_rewrite: false
-          distinct: false
-          replica: false
-          query_comment: ''
-          query_tags: {  }
+          offset: 0
       exposed_form:
         type: basic
         options:
@@ -57,21 +966,43 @@ display:
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-      pager:
-        type: none
+      access:
+        type: role
         options:
-          offset: 0
+          role:
+            secretary: secretary
+            administrator: administrator
+      cache:
+        type: none
+        options: {  }
+      empty: {  }
+      sorts:
+        designation:
+          id: designation
+          table: member
+          field: designation
+          relationship: none
+          group_type: group
+          admin_label: ''
+          entity_type: member
+          entity_field: designation
+          plugin_id: standard
+          order: ASC
+          expose:
+            label: ''
+            field_identifier: designation
+          exposed: false
+      arguments: {  }
+      filters: {  }
+      filter_groups:
+        operator: AND
+        groups: {  }
       style:
         type: table
         options:
           grouping: {  }
           row_class: ''
           default_row_class: true
-          override: true
-          sticky: true
-          caption: ''
-          summary: ''
-          description: ''
           columns:
             id: id
             designation: designation
@@ -90,6 +1021,7 @@ display:
             nothing_2: nothing
             nothing_3: nothing
             nothing_1: nothing
+          default: '-1'
           info:
             id:
               sortable: false
@@ -210,952 +1142,28 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-          default: '-1'
+          override: true
+          sticky: true
+          summary: ''
           empty_table: false
+          caption: ''
+          description: ''
       row:
         type: fields
         options:
+          default_field_elements: true
           inline: {  }
           separator: ''
           hide_empty: false
-          default_field_elements: true
-      fields:
-        id:
-          id: id
-          table: member
-          field: id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Identifiant (ID)'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: id
-          plugin_id: field
-        designation:
-          id: designation
-          table: member
-          field: designation
-          entity_type: member
-          entity_field: designation
-          plugin_id: field
-        addresssupplement:
-          id: addresssupplement
-          table: member
-          field: addresssupplement
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Complément d''adresse'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: addresssupplement
-          plugin_id: field
-        street:
-          id: street
-          table: member
-          field: street
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Adresse
-          exclude: false
-          alter:
-            alter_text: true
-            text: "{% if addresssupplement == \"\" %}\r\n{{ ' ' }}\r\n{% else %}\r\n{{ addresssupplement }}<BR>\r\n{% endif %}\r\n{{ street }} "
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: street
-          plugin_id: field
-        postalcode:
-          id: postalcode
-          table: member
-          field: postalcode
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Code Postal'
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: postalcode
-          plugin_id: field
-        city:
-          id: city
-          table: member
-          field: city
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Ville
-          exclude: false
-          alter:
-            alter_text: true
-            text: '{{ postalcode }} {{ city }}'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: city
-          plugin_id: field
-        country:
-          id: country
-          table: member
-          field: country
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Pays
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: country
-          plugin_id: field
-        telephone:
-          id: telephone
-          table: member
-          field: telephone
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Téléphone
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: telephone_link
-          settings:
-            title: ''
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: telephone
-          plugin_id: field
-        status:
-          id: status
-          table: member
-          field: status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Statut
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: list_default
-          settings: {  }
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: status
-          plugin_id: field
-        startdate:
-          id: startdate
-          table: member
-          field: startdate
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Début
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_custom
-          settings:
-            timezone_override: ''
-            date_format: m/Y
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: startdate
-          plugin_id: field
-        enddate:
-          id: enddate
-          table: member
-          field: enddate
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Fin
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: datetime_custom
-          settings:
-            timezone_override: ''
-            date_format: m/Y
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: enddate
-          plugin_id: field
-        contact_id:
-          id: contact_id
-          table: member
-          field: contact_id
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Contact
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          entity_type: member
-          entity_field: contact_id
-          plugin_id: field
-        nothing:
-          id: nothing
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Actions
-          exclude: false
-          alter:
-            alter_text: true
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-        nothing_2:
-          id: nothing_2
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Edit
-          exclude: false
-          alter:
-            alter_text: true
-            text: '<img src="[site:url]sites/default/files/images/edit.svg" title="Modifier l''adhérent">'
-            make_link: true
-            path: '/association/member/{{ id }}/edit?destination=association/members'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-        nothing_3:
-          id: nothing_3
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Delete
-          exclude: false
-          alter:
-            alter_text: true
-            text: '<img src="[site:url]sites/default/files/images/trash-2.svg" title="Supprimer l''adhérent">'
-            make_link: true
-            path: '/association/member/{{ id }}/delete?destination=association/members'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-        nothing_1:
-          id: nothing_1
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Contact
-          exclude: false
-          alter:
-            alter_text: true
-            text: '{% if contact_id != "" %}<img src="[site:url]sites/default/files/images/user.svg" title="Voir, modifier, supprimer le contact">{% endif %}'
-            make_link: true
-            path: '/association/person/{{ contact_id }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: _blank
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-      filters: {  }
-      sorts:
-        designation:
-          id: designation
-          table: member
-          field: designation
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          entity_type: member
-          entity_field: designation
-          plugin_id: standard
+      query:
+        type: views_query
+        options:
+          query_comment: ''
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_tags: {  }
+      relationships: {  }
       header:
         area:
           id: area
@@ -1164,21 +1172,14 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: text
           empty: true
-          tokenize: false
           content:
             value: '<BR><a href="/association/member/add?destination=association/members" class="form-submit">Ajouter</a>'
             format: full_html
-          plugin_id: text
+          tokenize: false
       footer: {  }
-      empty: {  }
-      relationships: {  }
-      arguments: {  }
       display_extenders: {  }
-      title: Adhérents
-      filter_groups:
-        operator: AND
-        groups: {  }
     cache_metadata:
       max-age: -1
       contexts:
@@ -1187,44 +1188,11 @@ display:
         - user.roles
       tags: {  }
   page_1:
-    display_plugin: page
     id: page_1
     display_title: Page
+    display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
-      path: association/members
-      menu:
-        type: tab
-        title: Adhérents
-        description: ''
-        expanded: false
-        parent: 'menu_link_content:571ae09f-f8b7-4ec3-bb61-d4dad627e39d'
-        weight: 2
-        context: '0'
-        menu_name: mysuperfishmenu
-      tab_options:
-        type: none
-        title: ''
-        description: ''
-        weight: 0
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: '<a href="[site:url]association/member/add?destination=association/members" title="Ajouter un adhérent"><img src="[site:url]sites/default/files/images/user-plus.svg" title="Ajouter un adhérent"></a>&nbsp;&nbsp;<a href="[site:url]association/export_membersformaps" title="Télécharger pour Google Maps"><img src="[site:url]sites/default/files/images/map.svg" title="Télécharger pour Google Maps"></a>&nbsp;&nbsp;<a href="[site:url]association/export_members" title="Exporter les adhérents"><img src="[site:url]sites/default/files/images/download.svg" title="Exporter les adhérents"></a>&nbsp;&nbsp;<a href="[site:url]association/import_members" title="Importer les statuts"><img src="[site:url]sites/default/files/images/upload.svg" title="Importer les statuts"></a>'
-            format: full_html
-          plugin_id: text
-      defaults:
-        header: false
-        fields: false
       fields:
         id:
           id: id
@@ -1233,6 +1201,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: id
+          plugin_id: field
           label: '#'
           exclude: false
           alter:
@@ -1289,9 +1260,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: id
-          plugin_id: field
         designation:
           id: designation
           table: member
@@ -1299,6 +1267,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: designation
+          plugin_id: field
           label: Désignation
           exclude: false
           alter:
@@ -1354,9 +1325,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: designation
-          plugin_id: field
         addresssupplement:
           id: addresssupplement
           table: member
@@ -1364,6 +1332,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: addresssupplement
+          plugin_id: field
           label: 'Complément d''adresse'
           exclude: true
           alter:
@@ -1419,9 +1390,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: addresssupplement
-          plugin_id: field
         street:
           id: street
           table: member
@@ -1429,6 +1397,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: street
+          plugin_id: field
           label: Adresse
           exclude: false
           alter:
@@ -1484,9 +1455,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: street
-          plugin_id: field
         postalcode:
           id: postalcode
           table: member
@@ -1494,6 +1462,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: postalcode
+          plugin_id: field
           label: 'Code Postal'
           exclude: true
           alter:
@@ -1549,9 +1520,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: postalcode
-          plugin_id: field
         city:
           id: city
           table: member
@@ -1559,6 +1527,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: city
+          plugin_id: field
           label: Ville
           exclude: false
           alter:
@@ -1614,9 +1585,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: city
-          plugin_id: field
         country:
           id: country
           table: member
@@ -1624,6 +1592,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: country
+          plugin_id: field
           label: Pays
           exclude: false
           alter:
@@ -1678,9 +1649,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: country
-          plugin_id: field
         telephone:
           id: telephone
           table: member
@@ -1688,6 +1656,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: telephone
+          plugin_id: field
           label: Téléphone
           exclude: false
           alter:
@@ -1743,9 +1714,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: telephone
-          plugin_id: field
         region:
           id: region
           table: member
@@ -1753,6 +1721,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: region
+          plugin_id: field
           label: 'Région CFE'
           exclude: false
           alter:
@@ -1807,9 +1778,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: region
-          plugin_id: field
         status:
           id: status
           table: member
@@ -1817,6 +1785,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: status
+          plugin_id: field
           label: Statut
           exclude: false
           alter:
@@ -1871,9 +1842,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: status
-          plugin_id: field
         startdate:
           id: startdate
           table: member
@@ -1881,6 +1849,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: startdate
+          plugin_id: field
           label: Début
           exclude: false
           alter:
@@ -1937,9 +1908,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: startdate
-          plugin_id: field
         enddate:
           id: enddate
           table: member
@@ -1947,6 +1915,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: enddate
+          plugin_id: field
           label: Fin
           exclude: false
           alter:
@@ -2003,9 +1974,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: enddate
-          plugin_id: field
         comment:
           id: comment
           table: member
@@ -2013,6 +1981,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: comment
+          plugin_id: field
           label: •
           exclude: false
           alter:
@@ -2067,9 +2038,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: comment
-          plugin_id: field
         contact_id:
           id: contact_id
           table: member
@@ -2077,6 +2045,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: contact_id
+          plugin_id: field
           label: Contact
           exclude: true
           alter:
@@ -2133,9 +2104,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: contact_id
-          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -2143,6 +2111,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: Actions
           exclude: false
           alter:
@@ -2184,7 +2153,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
         nothing_2:
           id: nothing_2
           table: views
@@ -2192,6 +2160,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: Edit
           exclude: false
           alter:
@@ -2233,7 +2202,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
         nothing_3:
           id: nothing_3
           table: views
@@ -2241,6 +2209,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: Delete
           exclude: false
           alter:
@@ -2282,7 +2251,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
         nothing_1:
           id: nothing_1
           table: views
@@ -2290,6 +2258,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: Contact
           exclude: false
           alter:
@@ -2331,7 +2300,39 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
+      defaults:
+        fields: false
+        header: false
+      header:
+        area:
+          id: area
+          table: views
+          field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          plugin_id: text
+          empty: false
+          content:
+            value: '<a href="[site:url]association/member/add?destination=association/members" title="Ajouter un adhérent"><img src="[site:url]sites/default/files/images/user-plus.svg" title="Ajouter un adhérent"></a>&nbsp;&nbsp;<a href="[site:url]association/export_membersformaps" title="Télécharger pour Google Maps"><img src="[site:url]sites/default/files/images/map.svg" title="Télécharger pour Google Maps"></a>&nbsp;&nbsp;<a href="[site:url]association/export_members" title="Exporter les adhérents"><img src="[site:url]sites/default/files/images/download.svg" title="Exporter les adhérents"></a>&nbsp;&nbsp;<a href="[site:url]association/import_members" title="Importer les statuts"><img src="[site:url]sites/default/files/images/upload.svg" title="Importer les statuts"></a>'
+            format: full_html
+          tokenize: false
+      display_extenders: {  }
+      path: association/members
+      menu:
+        type: tab
+        title: Adhérents
+        description: ''
+        weight: 2
+        expanded: false
+        menu_name: mysuperfishmenu
+        parent: 'menu_link_content:571ae09f-f8b7-4ec3-bb61-d4dad627e39d'
+        context: '0'
+      tab_options:
+        type: none
+        title: ''
+        description: ''
+        weight: 0
     cache_metadata:
       max-age: -1
       contexts:
@@ -2340,13 +2341,11 @@ display:
         - user.roles
       tags: {  }
   rest_export_1:
-    display_plugin: rest_export
     id: rest_export_1
     display_title: 'Export Entité'
+    display_plugin: rest_export
     position: 2
     display_options:
-      display_extenders: {  }
-      path: export_members.csv
       pager:
         type: none
         options:
@@ -2358,6 +2357,8 @@ display:
           formats:
             csv: csv
       display_description: ''
+      display_extenders: {  }
+      path: export_members.csv
     cache_metadata:
       max-age: -1
       contexts:
@@ -2367,41 +2368,11 @@ display:
         - user.roles
       tags: {  }
   rest_export_2:
-    display_plugin: rest_export
     id: rest_export_2
     display_title: 'Export pour Maps'
+    display_plugin: rest_export
     position: 3
     display_options:
-      display_extenders: {  }
-      display_description: ''
-      path: export_membersformaps.csv
-      row:
-        type: data_field
-        options:
-          field_options:
-            designation:
-              alias: ''
-              raw_output: false
-            street:
-              alias: ''
-              raw_output: false
-            postalcode:
-              alias: ''
-              raw_output: false
-            city:
-              alias: ''
-              raw_output: false
-            country:
-              alias: ''
-              raw_output: false
-            nothing:
-              alias: ''
-              raw_output: false
-      style:
-        type: serializer
-        options:
-          formats:
-            csv: csv
       fields:
         designation:
           id: designation
@@ -2417,6 +2388,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: street
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -2472,9 +2446,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: street
-          plugin_id: field
         postalcode:
           id: postalcode
           table: member
@@ -2482,6 +2453,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: postalcode
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -2537,9 +2511,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: postalcode
-          plugin_id: field
         city:
           id: city
           table: member
@@ -2547,6 +2518,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: city
+          plugin_id: field
           label: ''
           exclude: true
           alter:
@@ -2602,9 +2576,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: city
-          plugin_id: field
         country:
           id: country
           table: member
@@ -2612,6 +2583,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: country
+          plugin_id: field
           label: ''
           exclude: false
           alter:
@@ -2666,9 +2640,6 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: member
-          entity_field: country
-          plugin_id: field
         nothing:
           id: nothing
           table: views
@@ -2676,6 +2647,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          plugin_id: custom
           label: address
           exclude: false
           alter:
@@ -2717,11 +2689,6 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: false
-          plugin_id: custom
-      defaults:
-        fields: false
-        filters: false
-        filter_groups: false
       pager:
         type: none
         options:
@@ -2734,6 +2701,9 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
+          entity_type: member
+          entity_field: status
+          plugin_id: numeric
           operator: between
           value:
             min: '3'
@@ -2755,9 +2725,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            placeholder: ''
             min_placeholder: ''
             max_placeholder: ''
+            placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -2770,13 +2740,44 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: member
-          entity_field: status
-          plugin_id: numeric
       filter_groups:
         operator: AND
         groups:
           1: AND
+      style:
+        type: serializer
+        options:
+          formats:
+            csv: csv
+      row:
+        type: data_field
+        options:
+          field_options:
+            designation:
+              alias: ''
+              raw_output: false
+            street:
+              alias: ''
+              raw_output: false
+            postalcode:
+              alias: ''
+              raw_output: false
+            city:
+              alias: ''
+              raw_output: false
+            country:
+              alias: ''
+              raw_output: false
+            nothing:
+              alias: ''
+              raw_output: false
+      defaults:
+        fields: false
+        filters: false
+        filter_groups: false
+      display_description: ''
+      display_extenders: {  }
+      path: export_membersformaps.csv
     cache_metadata:
       max-age: -1
       contexts:
