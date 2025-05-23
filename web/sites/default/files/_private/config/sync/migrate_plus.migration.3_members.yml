@@ -11,7 +11,7 @@ migration_group: cfe
 label: '3 Members'
 source:
   plugin: csv
-  path: /Users/efalzon/Sites/CFE4/web/sites/default/files/_private/config/migration_Members.csv
+  path: /Users/efalzon/Sites/cfe/web/sites/default/files/_private/config/migration_Members.csv
   delimiter: ;
   header_row_count: 1
   ids:
