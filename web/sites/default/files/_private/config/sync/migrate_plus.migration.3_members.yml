@@ -1,4 +1,4 @@
-uuid: 3a55ba11-ea0b-40f5-bcd6-d74dd0fd53ac
+uuid: d9043c32-ddf5-442c-8323-0d530f4e05bf
 langcode: en
 status: true
 dependencies: {  }
@@ -11,7 +11,7 @@ migration_group: cfe
 label: '3 Members'
 source:
   plugin: csv
-  path: /Users/efalzon/Sites/cfe/web/sites/default/files/_private/config/migration_Members.csv
+  path: sites/default/files/_private/config/migration_Members.csv
   delimiter: ;
   header_row_count: 1
   ids:
