@@ -1,10 +1,10 @@
-uuid: 2c1cf4ba-272a-4dbc-ad96-cf5e2d16e7eb
+uuid: 6f74bf15-6313-4a22-8f74-be91346e1914
 langcode: fr
 status: true
 dependencies: {  }
 id: cfe
 label: CFE
-description: ''
-source_type: null
+description: 'To create CFE members, persons and users'
+source_type: ''
 module: null
 shared_configuration: null
