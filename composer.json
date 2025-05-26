@@ -28,7 +28,7 @@
         "drupal/migrate_source_csv": "^3.7",
         "drupal/migrate_tools": "^6.0",
         "drupal/superfish": "^1.4",
-        "drupal/swiftmailer": "^2.0",
+        "drupal/symfony_mailer": "^1.4",
         "drush/drush": "^10.6",
         "kint-php/kint": "^3.3"
     },
