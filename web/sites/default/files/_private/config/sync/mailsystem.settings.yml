@@ -3,21 +3,12 @@ _core:
 langcode: fr
 theme: corporate_lite
 defaults:
-  sender: swiftmailer
-  formatter: swiftmailer
+  sender: php_mail
+  formatter: php_mail
 modules:
   swiftmailer:
     none:
       sender: swiftmailer
       formatter: swiftmailer
-  association:
-    membershipreminderemail:
-      sender: swiftmailer
-      formatter: swiftmailer
-    membershipfirstemail:
-      sender: swiftmailer
-      formatter: swiftmailer
-  user:
-    none:
-      sender: swiftmailer
-      formatter: swiftmailer
+  association: {  }
+  user: {  }
