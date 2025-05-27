@@ -30,6 +30,7 @@
         "drupal/migrate_tools": "^6.0",
         "drupal/superfish": "^1.4",
         "drupal/symfony_mailer": "^1.4",
+        "drupal/upgrade_status": "^4.3",
         "drush/drush": "^12.5",
         "kint-php/kint": "^3.3"
     },
