@@ -1,0 +1,23 @@
+uuid: 31b4b2bc-aa24-4af4-b282-93faa5247706
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+  theme:
+    - classy
+_core:
+  default_config_hash: 0gq3VPg-_UM69FCCWurLFIrrnIjC2HLKhwo9iQNtcUo
+id: classy_syndicate
+theme: classy
+region: sidebar_first
+weight: 0
+provider: null
+plugin: node_syndicate_block
+settings:
+  id: node_syndicate_block
+  label: 'RSS feed'
+  label_display: '0'
+  provider: node
+  block_count: 10
+visibility: {  }

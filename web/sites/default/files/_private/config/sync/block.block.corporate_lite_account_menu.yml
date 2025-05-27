@@ -1,5 +1,5 @@
-uuid: e71fe248-23c1-4bc4-ba41-0c217c353623
-langcode: fr
+uuid: 1b737a3e-b5de-4452-a40f-ecdb903d517f
+langcode: en
 status: true
 dependencies:
   config:
@@ -28,5 +28,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    context_mapping: {  }
     pages: '/association*'

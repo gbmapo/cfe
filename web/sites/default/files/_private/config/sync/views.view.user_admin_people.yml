@@ -82,7 +82,7 @@ display:
           entity_type: user
           entity_field: name
           plugin_id: field
-          label: 'Nom d''utilisateur'
+          label: "Nom d'utilisateur"
           exclude: false
           alter:
             alter_text: false
@@ -462,6 +462,7 @@ display:
         type: full
         options:
           offset: 0
+          pagination_heading_level: h4
           items_per_page: 50
           total_pages: 0
           id: 0
@@ -505,7 +506,7 @@ display:
           admin_label: ''
           plugin_id: text_custom
           empty: true
-          content: 'Personne n''est disponible.'
+          content: "Personne n'est disponible."
           tokenize: false
       sorts:
         created:
