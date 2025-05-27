@@ -1,5 +1,5 @@
-uuid: 9a49b963-f7b7-44b9-a2ee-e288757cc6dd
-langcode: fr
+uuid: 3a1113b1-dfb2-480c-9c8a-6735cef73239
+langcode: en
 status: true
 dependencies:
   module:
@@ -17,7 +17,7 @@ provider: null
 plugin: search_form_block
 settings:
   id: search_form_block
-  label: Rechercher
+  label: Search
   label_display: visible
   provider: search
   page_id: ''
@@ -25,5 +25,4 @@ visibility:
   request_path:
     id: request_path
     negate: true
-    context_mapping: {  }
     pages: '/association*'

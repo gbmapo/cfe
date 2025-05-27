@@ -1,6 +1,5 @@
 _core:
   default_config_hash: IhwTepsVwtbtbcT5GzQKhCXDCRvbk3MNkWqPiuiZ10s
-langcode: fr
 theme: corporate_lite
 defaults:
   sender: php_mail

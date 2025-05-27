@@ -172,7 +172,7 @@ display:
           entity_type: member
           entity_field: addresssupplement
           plugin_id: field
-          label: 'Complément d''adresse'
+          label: "Complément d'adresse"
           exclude: true
           alter:
             alter_text: false
@@ -610,7 +610,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: designation
           exposed: false
         iscontact:
           id: iscontact
@@ -625,7 +624,6 @@ display:
           order: DESC
           expose:
             label: ''
-            field_identifier: iscontact
           exposed: false
         lastname:
           id: lastname
@@ -640,7 +638,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: lastname
           exposed: false
         firstname:
           id: firstname
@@ -655,7 +652,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: firstname
           exposed: false
       arguments: {  }
       filters:
@@ -986,7 +982,7 @@ display:
           entity_type: member
           entity_field: addresssupplement
           plugin_id: field
-          label: 'Complément d''adresse'
+          label: "Complément d'adresse"
           exclude: false
           alter:
             alter_text: false
@@ -1439,7 +1435,7 @@ display:
           entity_type: member
           entity_field: startdate
           plugin_id: field
-          label: 'Date de début d''adhésion'
+          label: "Date de début d'adhésion"
           exclude: false
           alter:
             alter_text: false
@@ -1505,7 +1501,7 @@ display:
           entity_type: member
           entity_field: enddate
           plugin_id: field
-          label: 'Date de fin d''adhésion'
+          label: "Date de fin d'adhésion"
           exclude: false
           alter:
             alter_text: false
@@ -1905,7 +1901,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: designation
           exposed: false
         lastname:
           id: lastname
@@ -1920,7 +1915,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: lastname
           exposed: false
         firstname:
           id: firstname
@@ -1935,7 +1929,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: firstname
           exposed: false
       filters: {  }
       filter_groups:

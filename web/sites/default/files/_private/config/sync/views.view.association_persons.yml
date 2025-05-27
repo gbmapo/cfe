@@ -805,7 +805,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: lastname
           exposed: false
         firstname:
           id: firstname
@@ -820,7 +819,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: firstname
           exposed: false
       arguments: {  }
       filters: {  }

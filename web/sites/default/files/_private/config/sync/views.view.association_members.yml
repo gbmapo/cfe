@@ -115,7 +115,7 @@ display:
           entity_type: member
           entity_field: addresssupplement
           plugin_id: field
-          label: 'Complément d''adresse'
+          label: "Complément d'adresse"
           exclude: true
           alter:
             alter_text: false
@@ -990,7 +990,6 @@ display:
           order: ASC
           expose:
             label: ''
-            field_identifier: designation
           exposed: false
       arguments: {  }
       filters: {  }
@@ -1335,7 +1334,7 @@ display:
           entity_type: member
           entity_field: addresssupplement
           plugin_id: field
-          label: 'Complément d''adresse'
+          label: "Complément d'adresse"
           exclude: true
           alter:
             alter_text: false
