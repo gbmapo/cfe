@@ -1,23 +1,12 @@
 _core:
   default_config_hash: ppa_H8cOiilgerF6MjF21E6UEUikR3_7t4T5nGg9ZWU
-langcode: fr
-favicon:
-  use_default: true
-features:
-  comment_user_picture: false
-  comment_user_verification: true
-  favicon: true
-  node_user_picture: false
-logo:
-  path: 'public://logo.gif'
-  use_default: false
 breadcrumb_separator: fa-angle-right
-scroll_to_top_display: 1
+scroll_to_top_display: true
 scroll_to_top_icon: fa-angle-double-up
 bootstrap_remote_type: cdn
 scroll_to_top_region: footer-to-top-enabled
 color_scheme: gray
-page_container_border: 0
+page_container_border: false
 animations_state: false
 slideout_background_color: 'region--light-typography region--dark-background'
 slideout_side: right
@@ -38,7 +27,7 @@ header_layout_container: container
 header_background_color: 'region--dark-typography region--white-background'
 header_blocks_paddings: false
 header_region_paddings: false
-fixed_header: 0
+fixed_header: true
 banner_layout_container: container-fluid
 banner_background_color: 'region--dark-typography region--white-background'
 banner_blocks_paddings: true
@@ -205,4 +194,3 @@ subfooter_id: subfooter
 isotope_layout_mode: masonry
 isotope_filters_text: All
 google_maps_key: AIzaSyDyL-4KyWw_3hp-0jmZLGcJ3zMWkkJ44VI
-premium_description: ''
