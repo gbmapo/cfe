@@ -7,6 +7,7 @@ use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\user\Entity\Role;
 use Drupal\user\Entity\User;
+use Drupal\Core\Datetime\DrupalDateTime;
 
 
 /**
@@ -38,7 +39,8 @@ class MembershipSettings extends FormBase
     $rpReminder = $config->get('reminder');
 
     if ($rpStep == 0) {
-      $iY1 = (int)strftime("%Y");
+      $iY1 = (int)DrupalDateTime::createFromTimestamp(strtotime("now"), new \DateTimeZone('Europe/Paris'))
+        ->format('Y');
       $iY2 = $iY1 + 1;
       $form['actions']['1B'] = [
         '#type'          => 'select',
@@ -50,8 +52,7 @@ class MembershipSettings extends FormBase
         ],
         '#default_value' => $rpYear,
       ];
-    }
-    else {
+    } else {
       $form['actions']['1A'] = [
         '#markup' => "<BR>1. " . $this->t('The renewal period has been opened for year « %year ».', ['%year' => $rpYear]),
       ];
@@ -67,14 +68,12 @@ class MembershipSettings extends FormBase
           ],
           '#default_value' => 0,
         ];
-      }
-      else {
+      } else {
         $form['actions']['2A'] = [
           '#markup' => '<BR>' . "2. " . $this->t('The first email has been sent.'),
         ];
         if ($rpStep == 2) {
-        }
-        else {
+        } else {
           $form['actions']['3A'] = [
             '#markup' => '<BR>' . "3. " . $this->t('The reminder email has been sent (total number of reminders: %reminders).', ['%reminders' => $rpReminder]),
           ];
@@ -140,52 +139,64 @@ class MembershipSettings extends FormBase
     $rpFirstEmail = $config->get('firstemail');
     $rpReminder = $config->get('reminder');
 
-    $sTo = Drupal::config('system.site')->get('mail');
+    $sTo = Drupal::config('system.site')
+      ->get('mail');
 
     $sMessage = '';
     $sType = 'status';
     switch ($rpStep) {
 
       case 0:
+        // Autoriser les personnes associées aux adhérents à accéder au formulaire
+        $role = Role::create(['id' => 'member', 'label' => t('Member')]);
+        $role->grantPermission('renew membership');
+        $role->save();
+
+        $database = Drupal::database();
+        $query = $database->select('person', 'pe');
+        $query->fields('pe', ['id', 'member_id ']);
+        $query->condition('member_id', 0, '>');
+        $ids = $query->execute()
+          ->fetchCol(0);
+        $users = User::loadMultiple($ids);
+        foreach ($users as $user) {
+          $user->addRole('member');
+          $user->save();
+        }
+
+        // Mettre le statut de tous les adhérents actifs à 'Adhésion en attente'
+        $database = Drupal::database();
+        $number_updated = $database->update('member')
+          ->fields(['status' => 2,])
+          ->condition('status', 4, '=')
+          ->execute();
+
         $config->set('step', 1);
         $config->set('year', $form_state->getValue('1B'));
         $config->set('status', 'Opened');
-        $config->set('firstemail', false);
+        $config->set('firstemail', FALSE);
         $config->set('reminder', 0);
-        // Autoriser les adhérents à accéder au formulaire
-        $role = Role::load('contact_for_member');
-        $role->grantPermission('renew membership');
-        $role->save();
-        // Mettre le statut de tous les adhérents actifs à 'Adhésion en attente'
-        $storage = Drupal::entityTypeManager()->getStorage('member');
-        $database = Drupal::database();
-        $query = $database->select('member', 'am');
-        $query->fields('am', ['id', 'status'])->condition('am.status', 4, '=');
-        $results = $query->execute();
-        $iNumber = 0;
-        foreach ($results as $key => $result) {
-          $entity = $storage->load($result->id);
-          $entity->status = 2;
-          $entity->save();
-          $iNumber++;
-        }
-        Drupal::logger('association')
-          ->info('Renew membership: Period has been opened.');
-        Drupal::logger('association')
-          ->info('Renew membership: Number of members: @number.', ['@number' => $iNumber]);
+        $config->save();
+
+        drupal_flush_all_caches();
+
         $sMessage = $this->t('Renew membership: Period has been opened.');
+        Drupal::logger('association')
+          ->info('Renew membership: Period has been opened. @text', ['@text' => Drupal::translation()
+            ->formatPlural($number_updated, 'One member updated.', '@count members updated.')]);
         break;
 
       case 1:
         if ($form_state->getValue('2B') == "1") {
-          $config->set('step', 2);
-          $config->set('firstemail', TRUE);
           // Envoyer le premier courriel
           $sTo = $sTo;
           $sBcc = _setListOfRecipients(2);
           $aParams = [$sBcc, $rpYear];
           Drupal::service('plugin.manager.mail')
             ->mail('association', 'membershipfirstemail', $sTo, 'fr', $aParams);
+          $config->set('step', 2);
+          $config->set('firstemail', TRUE);
+          $config->save();
           Drupal::logger('association')
             ->info('Renew membership: First email has been sent.');
           $sMessage = $this->t('Renew membership: First email has been sent.');
@@ -195,10 +206,11 @@ class MembershipSettings extends FormBase
       case 2:
       case 3:
         if ($form_state->getValue('3B') == "1") {
+          // Envoyer un courriel de relance
           $config->set('step', 3);
           $rpReminder = $config->get('reminder') + 1;
           $config->set('reminder', $rpReminder);
-          // Envoyer un courriel de relance
+          $config->save();
           $sTo = $sTo;
           $sBcc = _setListOfRecipients(2);
           $aParams = [$sBcc, $rpYear, $rpReminder];
@@ -216,21 +228,29 @@ class MembershipSettings extends FormBase
     }
 
     if ($form_state->getValue('4B') == "1") {
+
+      // Enlever l'accès au formulaire aux personnes associées aux adhérents
+      $role = Role::load('member');
+      $role->delete();
+
       $config->set('step', 0);
       $config->set('year', '');
       $config->set('status', 'Closed');
-      $config->set('firstemail', false);
+      $config->set('firstemail', FALSE);
       $config->set('reminder', 0);
-      $role = Role::load('contact_for_member');
-      $role->revokePermission('renew membership');
-      $role->save();
-      Drupal::logger('association')->info($this->t('Renew membership: Period has been closed.'));
+      $config->save();
+
       $sMessage = $this->t('Renew membership: Period has been closed.');
+      Drupal::logger('association')
+        ->info('Renew membership: Period has been closed.');
+
+      drupal_flush_all_caches();
+
     }
-    $config->save();
 
     if ($sMessage != '') {
-      Drupal::messenger()->addMessage($sMessage, $sType);
+      Drupal::messenger()
+        ->addMessage($sMessage, $sType);
 
     }
   }
