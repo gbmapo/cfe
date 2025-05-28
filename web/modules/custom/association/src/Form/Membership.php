@@ -43,8 +43,7 @@ class Membership extends FormBase
         '#markup' => $this->t("There is currently no renewal period opened.") . '<BR>',
       ];
 
-    }
-    elseif ($oCurrentUser->hasPermission("renew membership")) {
+    } elseif (in_array("member", $oCurrentUser->getRoles())) {
 
       $database = \Drupal::database();
       $query = $database->select('person', 'ap');
@@ -80,8 +79,7 @@ class Membership extends FormBase
             '#template' => $sTemp,
           ];
 
-        }
-        else {
+        } else {
 
           $sTemp = $this->t("Here’s your wish as recorded. You can change it as many times as you like: only the last change will be taken into account.<BR><BR>");
           $sTemp = ($iWish == -1) ? "" : $sTemp;
@@ -106,7 +104,7 @@ class Membership extends FormBase
             '#validated'     => TRUE,
           ];
           $form['fs1'] = [
-            '#markup' => '<div id="fs1">' . $this->t("Once downloaded, I'll print my membership form, I'll make the necessary changes and send it to:<BR><BR><I>Cercle Ferroviphile Européen<BR> 6 rue du Morvan<BR>75011 Paris</I><BR><BR>") . '</div>',
+            '#markup' => '<div id="fs1">' . $this->t("Once downloaded, I'll print my membership form, I'll make the necessary changes and send it to the address specified in the document.<BR><BR>") . '</div>',
           ];
         }
       }
@@ -122,11 +120,10 @@ class Membership extends FormBase
         '#value' => $this->t('Submit'),
       ];
 
-    }
-    else {
+    } else {
 
       $form['header'] = [
-        '#markup' => $this->t("You're not allowed to renew membership. Only the « contact for member » is allowed to do it.") . '<BR>',
+        '#markup' => $this->t("You're not allowed to renew membership. Only the member may to do it.") . '<BR>',
       ];
 
     }
@@ -161,17 +158,22 @@ class Membership extends FormBase
         break;
       case 1:
         $iStatus = 3;
-        $Url = Url::fromUri('base:/association/membership/download/' . $form_state->getValue('adherent')[0]);
-        $sLink = \Drupal\Core\Link::fromTextAndUrl($this->t('here'), $Url)->toString();
+//      $Url = Url::fromUri('base:/association/membership/download/' . $form_state->getValue('adherent')[0]);
+        $Url = Url::fromUri('base:/sites/default/files/CFE-Adhesion.pdf');
+        $Url->setOptions(['attributes' => ['target' => '_blank',],]);
+        $sLink = \Drupal\Core\Link::fromTextAndUrl($this->t('here'), $Url)
+          ->toString();
         $sMessage = $this->t('Your wish has been recorded.<BR>To download your membership form, please click %link.', ['%link' => $sLink]);
         break;
     }
-    $storage = \Drupal::entityTypeManager()->getStorage('member');
+    $storage = \Drupal::entityTypeManager()
+      ->getStorage('member');
     $id = $form_state->getValue('adherent')[0];
     $entity = $storage->load($id);
     $entity->status = $iStatus;
     $entity->save();
-    \Drupal::messenger()->addMessage($sMessage);
+    \Drupal::messenger()
+      ->addMessage($sMessage);
     $form_state->setRedirectUrl(Url::fromRoute('<front>'));
   }
 }
